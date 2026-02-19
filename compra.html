@@ -6,103 +6,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra Finalizada - El Árbol de las Letras</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="bg-[#E0F7FA] min-h-screen flex flex-col">
 
-    <header class="bg-[#217E91] text-white">
-        <div
-            class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
-            <div class="flex items-center gap-4">
-                <img src="img/logo.png" alt="Logo"
-                    class="hidden md:block w-12 h-12 bg-white rounded-full p-1 border-2 border-[#4DD0E1]">
-                <h1 class="text-2xl md:text-3xl font-title">El Árbol de las Letras</h1>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-wrapper">
+                    <!-- Logic: hidden md:block -->
+                    <img src="img/logo.png" alt="Logo" class="logo-img mobile-logo">
+                    <h1 class="header-title">El Árbol de las Letras</h1>
+                </div>
+
+                <button id="mobile-menu" class="menu-btn mobile-menu-toggle" aria-label="Menú">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
             </div>
-            <button id="mobile-menu" class="md:hidden bg-[#4DD0E1] p-2 rounded-lg" aria-label="Menú">
-                <i class="fa fa-bars text-xl"></i>
-            </button>
         </div>
     </header>
 
-    <nav class="bg-[#217E91] border-t border-white/20">
-        <div id="nav-interactive"
-            class="hidden md:flex flex-col md:flex-row container mx-auto px-6 py-3 items-center justify-between gap-4">
-            <div class="relative w-full md:w-64 order-2 md:order-1">
-                <input type="text" placeholder="Título, autor..."
-                    class="w-full px-4 py-1.5 rounded-full text-gray-700 outline-none">
-                <i class="fa fa-search absolute right-4 top-2.5 text-gray-400"></i>
+    <nav class="site-nav">
+        <div id="nav-interactive" class="nav-container container">
+            <div class="search-container">
+                <input type="text" placeholder="Título, autor..." class="search-input">
+                <i class="fa fa-search search-icon"></i>
             </div>
-            <ul class="flex flex-col md:flex-row items-center gap-6 font-bold order-1 md:order-2">
-                <li><a href="index.html" class="hover:text-[#4DD0E1]">Inicio</a></li>
-                <li><a href="#" class="hover:text-[#4DD0E1]">Tu librería</a></li>
-                <li><a href="compra-online.html" class="hover:text-[#4DD0E1]">Compra on-line</a></li>
-                <li><a href="#" class="hover:text-[#4DD0E1]">Contacto</a></li>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#">Tu librería</a></li>
+                <li><a href="compra-online.html">Compra on-line</a></li>
+                <li><a href="#">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-12 flex-grow flex flex-col items-center">
+    <main class="container"
+        style="padding: 3rem 1.5rem; flex-grow: 1; display: flex; flex-direction: column; align-items: center;">
 
-        <div class="w-full max-w-2xl mb-6">
-            <a href="compra-online.html"
-                class="inline-flex items-center justify-center w-10 h-10 bg-[#69F0AE] text-white rounded-full shadow-md hover:scale-110 transition-transform">
+        <div class="success-container">
+            <a href="compra-online.html" class="back-btn">
                 <i class="fa fa-undo"></i>
             </a>
         </div>
 
-        <h2 class="text-3xl md:text-4xl font-title text-[#1A3C44] text-center mb-10 italic">Compra realizada con éxito
-        </h2>
+        <h2 class="page-title" style="margin-bottom: 2.5rem;">Compra realizada con éxito</h2>
 
-        <section
-            class="bg-[#B2EBF2] w-full max-w-2xl rounded-[40px] p-8 md:p-12 shadow-xl flex flex-col md:flex-row items-center gap-10">
+        <section class="success-card">
 
-            <div class="w-40 md:w-48 flex-shrink-0">
-                <img src="img/reconciliacion.png" alt="Libro comprado"
-                    class="w-full rounded-xl shadow-2xl border-4 border-white transform -rotate-2">
+            <div class="purchased-img-wrapper">
+                <img src="img/reconciliacion.png" alt="Libro comprado" class="purchased-img">
             </div>
 
-            <div class="flex-grow text-center md:text-left space-y-4">
-                <h3 class="text-2xl font-title text-[#1A3C44] border-b border-[#217E91] pb-2">Juan Carlos I:
-                    Reconciliación</h3>
+            <div class="purchase-details" style="flex-grow: 1; text-align: left; width: 100%;">
+                <h3>Juan Carlos I: Reconciliación</h3>
 
-                <div class="space-y-2 text-sm md:text-base text-gray-700">
-                    <p><span class="font-bold text-[#217E91]">Nº de seguimiento:</span> <span
-                            class="block md:inline font-mono text-xs md:text-sm bg-white/40 px-2 py-1 rounded">1800741231242415123</span>
-                    </p>
-                    <p><span class="font-bold text-[#217E91]">Fecha pedido:</span> 2025-11-23</p>
-                    <p><span class="font-bold text-[#217E91]">Método de pago:</span> <i
-                            class="fab fa-apple-pay text-2xl align-middle ml-1"></i> Apple Pay</p>
-                    <div class="pt-4">
-                        <span class="text-2xl font-bold text-[#E60000] bg-white px-4 py-2 rounded-lg shadow-sm">Total:
-                            19.99€</span>
+                <div style="font-size: 0.875rem; color: var(--text-body);">
+                    <div class="detail-row">
+                        <span class="detail-label">Nº de seguimiento:</span>
+                        <span class="tracking-code">1800741231242415123</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Fecha pedido:</span> 2025-11-23
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Método de pago:</span> <i class="fab fa-apple-pay"
+                            style="font-size: 1.5rem; vertical-align: middle;"></i> Apple Pay
+                    </div>
+                    <div style="padding-top: 1rem;">
+                        <span class="total-price">Total: 19.99€</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="mt-12">
-            <a href="compra-online.html"
-                class="bg-[#69F0AE] text-white px-10 py-4 rounded-2xl font-bold text-lg hover:bg-[#52d396] hover:shadow-lg transition-all flex items-center gap-3">
+        <div style="margin-top: 3rem;">
+            <a href="compra-online.html" class="shop-again-btn">
                 <i class="fa fa-shopping-basket"></i> Volver a comprar
             </a>
         </div>
     </main>
 
-    <footer class="bg-[#217E91] text-white py-8">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex gap-6 text-xl">
-                <a href="#" class="hover:text-[#69F0AE] transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-[#69F0AE] transition-colors"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="hover:text-[#69F0AE] transition-colors"><i class="fab fa-linkedin-in"></i></a>
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <div class="text-sm opacity-80">
-                © Author: Gonzalo Mansera
-            </div>
-            <div>
-                <a href="#" class="text-sm hover:underline">Política de privacidad</a>
-            </div>
+            <div class="footer-author" style="opacity: 0.8;">© Author: Gonzalo Mansera</div>
+            <div><a href="#" class="privacy-link">Política de privacidad</a></div>
         </div>
     </footer>
 
@@ -111,7 +105,7 @@
         const navBox = document.getElementById('nav-interactive');
         menuBtn.onclick = () => {
             navBox.classList.toggle('hidden');
-            navBox.classList.toggle('flex');
+            navBox.classList.toggle('active');
         };
     </script>
 </body>
