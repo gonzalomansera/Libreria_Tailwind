@@ -1,302 +1,650 @@
-/* ==========================================================================
-   VARIABLES Y BASE
-   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Roboto:wght@300;400;700&display=swap');
+
 :root {
-    --azul-header: #217E91;
-    --texto-titulo: #1A3C44;
-    --celeste-heading: #4DD0E1;
-    --celeste-fondo: #B2EBF2;
-    --azul-muy-palido: #E0F7FA;
-    --verde-boton: #69F0AE;
-    --rojo-precio: #E60000;
+    --primary-color: #217E91;
+    --secondary-color: #4DD0E1;
+    --bg-light: #E0F7FA;
+    --bg-medium: #B2EBF2;
+    --text-dark: #1A3C44;
+    --text-body: #1f2937;
+    /* gray-800 */
+    --accent-green: #69F0AE;
+    --accent-red: #E60000;
+    --white: #ffffff;
+    --gray-400: #9ca3af;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    font-family: 'Roboto', sans-serif; 
-    color: #333; 
-    background-color: white; 
-    line-height: 1.4; 
-    overflow-x: hidden; 
+* {
+    box-sizing: border-box;
 }
 
-/* ==========================================================================
-   COMPONENTES REUTILIZABLES (Botones y Enlaces)
-   ========================================================================== */
-.detalle-link, .compra-link, .btn-more, .btn-buy, .btn-buy-large, .btn-return {
-    background-color: var(--verde-boton);
-    color: white;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    text-align: center;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-body);
+    margin: 0;
+    line-height: 1.5;
 }
 
-.detalle-link:hover, .compra-link:hover, .btn-buy:hover, .btn-buy-large:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   HEADER Y NAVEGACIÓN
-   ========================================================================== */
-header { background-color: var(--azul-header); color: white; position: relative;grid-template-columns: 1fr;
- }
-
-.header-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; }
-
-.header-top-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.menu-toggle {
-    display: none;
-    background: var(--celeste-heading);
-    border: none;
-    color: white;
-    font-size: 22px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.logo-top img {
-    width: 60px; height: 60px;
-    background: white; border-radius: 50%;
-    padding: 5px; border: 2px solid var(--celeste-heading);
-    object-fit: contain;
-}
-
-.header-bottom-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    gap: 30px;
-}
-
-nav { display: flex; gap: 25px; flex-wrap: wrap; }
-nav a { color: white; text-decoration: none; font-size: 14px; transition: color 0.3s; }
-nav a:hover { color: var(--celeste-heading); }
-
-.search-wrap { position: relative; }
-.search-wrap input {
-    border-radius: 20px; border: none;
-    padding: 8px 40px 8px 15px; width: 250px; outline: none;
-}
-.search-wrap i { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #999; }
-
-/* ==========================================================================
-   CONTENIDO PRINCIPAL (Home, Tienda, Detalle)
-   ========================================================================== */
-.welcome-text, .section-heading, .page-title, .detail-page-title, .success-title {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-h2, h3, .page-title, .detail-book-title, .order-details h3 {
+.font-title {
     font-family: 'Jacques Francois', serif;
-    color: var(--texto-titulo);
 }
 
-.horizontal-scroll {
-    display: flex; overflow-x: auto; gap: 30px; padding: 40px 50px;
-    scrollbar-width: thin; scroll-snap-type: x proximity;
-}
-
-.book-item { min-width: 145px; scroll-snap-align: start; }
-.book-item img { width: 100%; height: 210px; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-
-/* Layouts de Página */
-.shop-container, .detail-container, .success-container {
-    background-color: var(--azul-muy-palido);
-    padding: 40px 50px;
-}
-
-.shop-layout, .detail-layout, .confirmation-bubble {
-    display: flex; gap: 40px; max-width: 1300px; margin: 0 auto;
-}
-
-.shop-card, .book-detail-bubble, .confirmation-bubble {
-    background-color: var(--celeste-fondo);
-    border-radius: 30px; padding: 30px;
-}
-
-.products-catalog { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; flex-grow: 1; }
-
-.description-box, .scrollable-content {
-    background-color: var(--azul-muy-palido);
-    border-radius: 15px; padding: 20px; margin-bottom: 15px;
-}
-
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-footer { grid-template-columns: 1fr;padding: 30px 20px;gap: 30px;}
-.store-footer { background-color: var(--celeste-fondo); padding: 40px 50px; border-top: 1px solid #CCC; }
-.store-content { display: flex; justify-content: space-between; max-width: 1400px; margin: 0 auto; }
-.city-lists { display: flex; gap: 50px; }
-.bottom-bar { background-color: var(--azul-header); color: white; padding: 15px 50px; display: flex; justify-content: space-between; }
-
-/* ==========================================================================
-   ESTILOS BASE E IMÁGENES
-   ========================================================================== */
-:root {
-    --azul-header: #217E91;
-    --texto-titulo: #1A3C44;
-    --celeste-heading: #4DD0E1;
-    --celeste-fondo: #B2EBF2;
-    --azul-muy-palido: #E0F7FA;
-    --verde-boton: #69F0AE;
-    --rojo-precio: #E60000;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Roboto', sans-serif; overflow-x: hidden; }
-
-/* Imagen de Biblioteca (Banner) */
-.hero-banner img {
+/* Utilities equivalent to some Tailwind classes we might need globally */
+.container {
     width: 100%;
-    height: 400px; /* Altura fija en Desktop */
-    object-fit: cover;
-    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
 }
 
-/* Mapa */
-.map-area img {
-    width: 240px; /* Tamaño Desktop */
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid #777;
-}
-
-/* Botones Base */
-.detalle-link, .compra-link, .btn-buy, .btn-buy-large {
-    background-color: var(--verde-boton);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    transition: 0.3s;
-}
-
-/* ==========================================================================
-   MODELO: DESKTOP (General)
-   ========================================================================== */
-.header-container { max-width: 1400px; margin: 0 auto; padding: 0 50px; }
-.header-top-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-.header-bottom-row { display: flex; justify-content: space-between; padding: 15px 0; }
-.shop-layout, .detail-layout { display: flex; gap: 40px; max-width: 1300px; margin: 0 auto; }
-.products-catalog { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-
-/* ==========================================================================
-   MODELO: TABLET (Hasta 1024px)
-   ========================================================================== */
-@media (max-width: 1024px) {
-    .header-container, .shop-container, .store-footer { padding: 20px 30px; }
-    
-    .hero-banner img { height: 300px; } 
-    
-    .shop-layout, .detail-layout, .header-bottom-row { 
-        flex-direction: column; align-items: center; text-align: center; 
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
     }
-
-    .products-catalog { grid-template-columns: 1fr 1fr; width: 100%; }
-    .map-area img { width: 200px; }
-    
-    .book-item { min-width: 120px; }
-    .book-item img { height: 170px; }
-    .horizontal-scroll { gap: 20px; padding: 30px 30px; }
 }
 
-/* ==========================================================================
-   MODELO: MÓVIL (Hasta 767px)
-   ========================================================================== */
-@media (max-width: 767px) {
-    .menu-toggle { display: block; }
-    
-    /* Menú Hamburguesa */
-    .header-bottom-row {
-        display: none; position: absolute; top: 100%; left: 0; width: 100%;
-        background: var(--azul-header); z-index: 1000; padding: 20px;
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
     }
-    .header-bottom-row.active { display: flex; flex-direction: column; }
-
-    
-    .hero-banner img { height: 200px; } 
-    
-    .map-area img { 
-        width: 160px; 
-        margin: 0 auto;
-    }
-
-    .detail-cover, .confirmation-cover { 
-        width: 140px; 
-    }
-
-    .products-catalog { grid-template-columns: 1fr; }
-    
-    
-    .book-item { min-width: 100px; }
-    .book-item img { height: 140px; }
-    .book-item .book-name { font-size: 12px; }
-    .book-item .book-price { font-size: 13px; }
-    .horizontal-scroll { gap: 15px; padding: 20px 20px; }
-    
-    /* Ajuste de botones y buscador */
-    .search-wrap, .search-wrap input, .detalle-link, .compra-link { width: 100%; }
-    footer { 
-    width: 100%; 
 }
 
-.store-footer { 
-    background-color: var(--celeste-fondo); 
-    padding: 40px 50px; 
-    border-top: 1px solid #CCC; 
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
 }
 
-.store-content { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
+.hidden {
+    display: none !important;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.gap-4 {
+    gap: 1rem;
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.text-center {
     text-align: center;
-    max-width: 1400px; 
-    margin: 0 auto; 
-    gap: 30px; 
 }
 
-.city-lists { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 15px; 
+.relative {
+    position: relative;
 }
 
-.city-lists ul {
+.absolute {
+    position: absolute;
+}
+
+.w-full {
+    width: 100%;
+}
+
+/* Scrollbar suave para la sección de novedades */
+.custom-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+/* Header & Nav Base Styles */
+.site-header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    position: relative;
+}
+
+.site-nav {
+    background-color: var(--primary-color);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.site-nav a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.site-nav a:hover {
+    color: var(--secondary-color);
+}
+
+.site-footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 1.5rem;
+}
+
+/* Header Components */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--white);
+    border-radius: 50%;
+    padding: 0.25rem;
+    border: 2px solid var(--secondary-color);
+}
+
+.logo-large {
+    width: 4rem;
+    height: 4rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.header-title {
+    font-family: 'Jacques Francois', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .header-title {
+        font-size: 1.875rem;
+    }
+
+    .mobile-logo {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header-title {
+        font-size: 2.25rem;
+    }
+}
+
+.menu-btn {
+    background-color: var(--secondary-color);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.mobile-menu-toggle {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+
+.desktop-logo-wrapper {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .desktop-logo-wrapper {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1rem;
+    }
+}
+
+/* Nav Components */
+.nav-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.nav-container.active {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    order: 2;
+}
+
+@media (min-width: 768px) {
+    .search-container {
+        width: 18rem;
+        order: 1;
+    }
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: none;
+    outline: none;
+    color: var(--text-body);
+}
+
+.search-input:focus {
+    box-shadow: 0 0 0 2px var(--secondary-color);
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+    color: var(--gray-400);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     list-style: none;
     padding: 0;
+    margin: 0;
+    font-weight: bold;
+    order: 1;
+    width: 100%;
 }
 
-.bottom-bar { 
-    background-color: var(--azul-header); 
-    color: white; 
-    padding: 15px 50px; 
-    display: flex; 
-    /* En la barra final, solemos mantener horizontal, pero si la quieres 
-       en una columna también, cambia a column: */
-    flex-direction: column; 
-    align-items: center;
-    gap: 10px;
+@media (min-width: 768px) {
+    .nav-list {
+        flex-direction: row;
+        gap: 2rem;
+        width: auto;
+        order: 2;
+    }
 }
+
+/* Main Content - Hero */
+.hero-section {
+    width: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .hero-img {
+        height: 400px;
+    }
+}
+
+.hero-text-container {
+    background-color: var(--bg-light);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 1.5rem;
+    font-family: 'Jacques Francois', serif;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+}
+
+.hero-description {
+    max-width: 48rem;
+    margin: 0 auto;
+    color: var(--text-body);
+    line-height: 1.625;
+}
+
+/* Book Section */
+.book-section {
+    padding: 3rem 1.5rem;
+}
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .section-header {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-family: 'Jacques Francois', serif;
+    color: var(--text-dark);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-accent {
+    background-color: var(--accent-green);
+    color: var(--white);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.book-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    /* Space for scrollbar */
+    scroll-snap-type: x mandatory;
+}
+
+.book-card {
+    min-width: 160px;
+    scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+    .book-card {
+        min-width: 200px;
+    }
+}
+
+.book-cover {
+    width: 100%;
+    height: 14rem;
+    object-fit: cover;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    transition: box-shadow 0.3s;
+}
+
+@media (min-width: 768px) {
+    .book-cover {
+        height: 18rem;
+    }
+}
+
+.book-card:hover .book-cover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+    font-weight: bold;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .book-title {
+        font-size: 1rem;
+    }
+}
+
+.book-price {
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+/* Map & Location Section */
+.location-section {
+    background-color: var(--bg-medium);
+    padding: 3rem 1.5rem;
+    border-top: 1px solid #d1d5db;
+    /* gray-300 */
+}
+
+.location-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .location-grid {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.map-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .map-container {
+        width: 33.333%;
+    }
+}
+
+.map-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 1rem;
+    border: 2px solid var(--white);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.cities-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+    .cities-grid {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cities-grid {
+        width: 33.333%;
+    }
+}
+
+.cities-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.city-highlight {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.location-info {
+    width: 100%;
+    background-color: var(--bg-light);
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .location-info {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1024px) {
+    .location-info {
+        width: 33.333%;
+    }
+}
+
+.location-title {
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.location-subtitle {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.address-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.address-icon {
+    color: var(--accent-red);
+    margin-right: 0.5rem;
+}
+
+/* Footer Content */
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.social-links a {
+    color: var(--white);
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-author {
+    font-weight: bold;
+}
+
+.author-name {
+    color: var(--secondary-color);
+}
+
+.privacy-link {
+    color: var(--white);
+    font-size: 0.875rem;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.privacy-link:hover {
+    color: var(--secondary-color);
 }

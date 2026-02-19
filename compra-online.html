@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compra On-line - El Árbol de las Letras</title>
-    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .font-title { font-family: 'Jacques Francois', serif; }
-        body { font-family: 'Roboto', sans-serif; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-[#E0F7FA] text-gray-800">
 
     <header class="bg-[#217E91] text-white">
         <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-4">
-                <img src="img/logo.png" alt="Logo" class="hidden md:block w-12 h-12 bg-white rounded-full p-1 border-2 border-[#4DD0E1]">
+                <img src="img/logo.png" alt="Logo"
+                    class="hidden md:block w-12 h-12 bg-white rounded-full p-1 border-2 border-[#4DD0E1]">
                 <h1 class="text-2xl md:text-3xl font-title">El Árbol de las Letras</h1>
             </div>
             <button id="mobile-menu" class="md:hidden bg-[#4DD0E1] p-2 rounded-lg" aria-label="Menú">
@@ -27,9 +26,11 @@
     </header>
 
     <nav class="bg-[#217E91] border-t border-white/20">
-        <div id="nav-interactive" class="hidden md:flex flex-col md:flex-row container mx-auto px-6 py-3 items-center justify-between gap-4">
+        <div id="nav-interactive"
+            class="hidden md:flex flex-col md:flex-row container mx-auto px-6 py-3 items-center justify-between gap-4">
             <div class="relative w-full md:w-64 order-2 md:order-1">
-                <input type="text" placeholder="Título, autor..." class="w-full px-4 py-2 rounded-full text-gray-700 outline-none focus:ring-2 focus:ring-[#4DD0E1]">
+                <input type="text" placeholder="Título, autor..."
+                    class="w-full px-4 py-2 rounded-full text-gray-700 outline-none focus:ring-2 focus:ring-[#4DD0E1]">
                 <i class="fa fa-search absolute right-4 top-3 text-gray-400"></i>
             </div>
             <ul class="flex flex-col md:flex-row items-center gap-6 font-bold order-1 md:order-2">
@@ -46,79 +47,112 @@
 
         <div class="flex flex-col lg:flex-row gap-8">
             <aside class="w-full lg:w-1/4 bg-white/40 p-6 rounded-3xl border border-[#B2EBF2] h-fit sticky top-4">
-                <h3 class="text-xl font-bold text-[#1A3C44] mb-6 border-b-2 border-[#217E91] pb-2 italic">Géneros Literarios</h3>
+                <h3 class="text-xl font-bold text-[#1A3C44] mb-6 border-b-2 border-[#217E91] pb-2 italic">Géneros
+                    Literarios</h3>
                 <form class="grid grid-cols-2 lg:grid-cols-1 gap-4">
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Terror</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Comedia</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Fantasía</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Misterio</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Novela</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Historia</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Aventura</span></label>
-                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox" class="w-4 h-4 accent-[#217E91]"><span class="group-hover:text-[#217E91]">Cocina</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Terror</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Comedia</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Fantasía</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Misterio</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Novela</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Historia</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Aventura</span></label>
+                    <label class="flex items-center gap-3 cursor-pointer group"><input type="checkbox"
+                            class="w-4 h-4 accent-[#217E91]"><span
+                            class="group-hover:text-[#217E91]">Cocina</span></label>
                 </form>
             </aside>
 
             <section class="w-full lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <article class="bg-[#B2EBF2] rounded-[35px] p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
+
+                <article
+                    class="bg-[#B2EBF2] rounded-[35px] p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="flex gap-4 mb-4">
-                            <img src="img/reconciliacion.png" alt="Reconciliación" class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-white">
+                            <img src="img/reconciliacion.png" alt="Reconciliación"
+                                class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-white">
                             <div class="flex-grow">
-                                <span class="bg-[#69F0AE] text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Novedad</span>
-                                <h4 class="text-lg font-title text-[#1A3C44] mt-1 leading-tight">Juan Carlos I: Reconciliación</h4>
+                                <span
+                                    class="bg-[#69F0AE] text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase">Novedad</span>
+                                <h4 class="text-lg font-title text-[#1A3C44] mt-1 leading-tight">Juan Carlos I:
+                                    Reconciliación</h4>
                                 <p class="text-xs mt-2 text-gray-600 italic">Juan Carlos I</p>
                                 <p class="text-xs text-[#217E91] font-bold">Historia / Ensayo</p>
                             </div>
                         </div>
                         <div class="bg-[#E0F7FA] p-4 rounded-2xl text-sm mb-4 h-24 overflow-hidden shadow-inner italic">
-                            Este libro analiza el papel de Juan Carlos I en la transición española y cómo su figura influyó...
+                            Este libro analiza el papel de Juan Carlos I en la transición española y cómo su figura
+                            influyó...
                         </div>
                     </div>
                     <div class="flex justify-between items-center gap-4">
                         <a href="detalle-libro.html" class="text-sm font-bold text-[#217E91] underline">Ver más...</a>
-                        <a href="compra.html" class="bg-[#69F0AE] text-white px-6 py-2 rounded-xl font-bold shadow-md hover:scale-105 transition-transform">Comprar</a>
+                        <a href="compra.html"
+                            class="bg-[#69F0AE] text-white px-6 py-2 rounded-xl font-bold shadow-md hover:scale-105 transition-transform">Comprar</a>
                     </div>
                 </article>
 
-                <article class="bg-[#B2EBF2] rounded-[35px] p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
+                <article
+                    class="bg-[#B2EBF2] rounded-[35px] p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="flex gap-4 mb-4">
-                            <img src="img/tres-mundos.png" alt="Los tres mundos" class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-white">
+                            <img src="img/tres-mundos.png" alt="Los tres mundos"
+                                class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-white">
                             <div class="flex-grow">
-                                <h4 class="text-lg font-title text-[#1A3C44] mt-1 leading-tight">Santiago Posteguillo: Los tres mundos</h4>
+                                <h4 class="text-lg font-title text-[#1A3C44] mt-1 leading-tight">Santiago Posteguillo:
+                                    Los tres mundos</h4>
                                 <p class="text-xs mt-2 text-gray-600 italic">S. Posteguillo</p>
                                 <p class="text-xs text-[#217E91] font-bold">Novela histórica</p>
                             </div>
                         </div>
                         <div class="bg-[#E0F7FA] p-4 rounded-2xl text-sm mb-4 h-24 overflow-hidden shadow-inner italic">
-                            Posteguillo construye una trama épica que entrelaza tres realidades distintas dentro del Imperio romano.
+                            Posteguillo construye una trama épica que entrelaza tres realidades distintas dentro del
+                            Imperio romano.
                         </div>
                     </div>
                     <div class="flex justify-between items-center gap-4">
                         <a href="detalle-libro.html" class="text-sm font-bold text-[#217E91] underline">Ver más...</a>
-                        <a href="compra.html" class="bg-[#69F0AE] text-white px-6 py-2 rounded-xl font-bold shadow-md hover:scale-105 transition-transform">Comprar</a>
+                        <a href="compra.html"
+                            class="bg-[#69F0AE] text-white px-6 py-2 rounded-xl font-bold shadow-md hover:scale-105 transition-transform">Comprar</a>
                     </div>
                 </article>
 
-                <article class="bg-[#B2EBF2] rounded-[35px] p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
+                <article
+                    class="bg-[#B2EBF2] rounded-[35px] p-6 shadow-lg hover:shadow-2xl transition-all flex flex-col justify-between">
                     <div>
                         <div class="flex gap-4 mb-4">
-                            <img src="img/momentos-estelares.png" alt="Zweig" class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-white">
+                            <img src="img/momentos-estelares.png" alt="Zweig"
+                                class="w-28 h-40 object-cover rounded-xl shadow-md border-2 border-white">
                             <div class="flex-grow">
-                                <h4 class="text-lg font-title text-[#1A3C44] mt-1 leading-tight">Stefan Zweig: Momentos estelares</h4>
+                                <h4 class="text-lg font-title text-[#1A3C44] mt-1 leading-tight">Stefan Zweig: Momentos
+                                    estelares</h4>
                                 <p class="text-xs mt-2 text-gray-600 italic">Stefan Zweig</p>
                                 <p class="text-xs text-[#217E91] font-bold">Ensayo histórico</p>
                             </div>
                         </div>
                         <div class="bg-[#E0F7FA] p-4 rounded-2xl text-sm mb-4 h-24 overflow-hidden shadow-inner italic">
-                            Zweig reúne catorce relatos que reconstruyen episodios decisivos de la historia de la humanidad.
+                            Zweig reúne catorce relatos que reconstruyen episodios decisivos de la historia de la
+                            humanidad.
                         </div>
                     </div>
                     <div class="flex justify-between items-center gap-4">
                         <a href="detalle-libro.html" class="text-sm font-bold text-[#217E91] underline">Ver más...</a>
-                        <a href="compra.html" class="bg-[#69F0AE] text-white px-6 py-2 rounded-xl font-bold shadow-md hover:scale-105 transition-transform">Comprar</a>
+                        <a href="compra.html"
+                            class="bg-[#69F0AE] text-white px-6 py-2 rounded-xl font-bold shadow-md hover:scale-105 transition-transform">Comprar</a>
                     </div>
                 </article>
 
@@ -128,10 +162,19 @@
 
     <section class="bg-[#B2EBF2] py-12 px-6 border-t border-gray-300">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="flex justify-center"><img src="img/mapa.png" class="max-w-[250px] rounded-2xl shadow-lg border-2 border-white"></div>
+            <div class="flex justify-center"><img src="img/mapa.png"
+                    class="max-w-[250px] rounded-2xl shadow-lg border-2 border-white"></div>
             <div class="grid grid-cols-2 gap-4 text-sm italic items-center">
-                <ul class="space-y-1"><li>Alicante (4)</li><li>Cádiz (3)</li><li>Badajoz (1)</li></ul>
-                <ul class="space-y-1"><li>Toledo (1)</li><li>Málaga (2)</li><li class="font-bold text-[#217E91]">Granada (9)</li></ul>
+                <ul class="space-y-1">
+                    <li>Alicante (4)</li>
+                    <li>Cádiz (3)</li>
+                    <li>Badajoz (1)</li>
+                </ul>
+                <ul class="space-y-1">
+                    <li>Toledo (1)</li>
+                    <li>Málaga (2)</li>
+                    <li class="font-bold text-[#217E91]">Granada (9)</li>
+                </ul>
             </div>
             <div class="bg-[#E0F7FA] p-6 rounded-3xl shadow-inner text-sm space-y-2">
                 <p class="font-bold text-[#1A3C44]">Basándonos en tu ubicación:</p>
@@ -164,4 +207,5 @@
         };
     </script>
 </body>
+
 </html>

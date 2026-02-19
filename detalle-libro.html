@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del Libro - El Árbol de las Letras</title>
-    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .font-title { font-family: 'Jacques Francois', serif; }
-        body { font-family: 'Roboto', sans-serif; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body class="bg-[#E0F7FA] min-h-screen flex flex-col">
 
     <header class="bg-[#217E91] text-white">
-        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
+        <div
+            class="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
             <div class="flex items-center gap-4">
-                <img src="img/logo.png" alt="Logo" class="hidden md:block w-12 h-12 bg-white rounded-full p-1 border-2 border-[#4DD0E1]">
+                <img src="img/logo.png" alt="Logo"
+                    class="hidden md:block w-12 h-12 bg-white rounded-full p-1 border-2 border-[#4DD0E1]">
                 <h1 class="text-2xl md:text-3xl font-title">El Árbol de las Letras</h1>
             </div>
             <button id="mobile-menu" class="md:hidden bg-[#4DD0E1] p-2 rounded-lg" aria-label="Menú">
@@ -27,9 +27,11 @@
     </header>
 
     <nav class="bg-[#217E91] border-t border-white/20">
-        <div id="nav-interactive" class="hidden md:flex flex-col md:flex-row container mx-auto px-6 py-3 items-center justify-between gap-4">
+        <div id="nav-interactive"
+            class="hidden md:flex flex-col md:flex-row container mx-auto px-6 py-3 items-center justify-between gap-4">
             <div class="relative w-full md:w-64 order-2 md:order-1">
-                <input type="text" placeholder="Título, autor..." class="w-full px-4 py-1.5 rounded-full text-gray-700 outline-none">
+                <input type="text" placeholder="Título, autor..."
+                    class="w-full px-4 py-1.5 rounded-full text-gray-700 outline-none">
                 <i class="fa fa-search absolute right-4 top-2.5 text-gray-400"></i>
             </div>
             <ul class="flex flex-col md:flex-row items-center gap-6 font-bold order-1 md:order-2">
@@ -42,9 +44,10 @@
     </nav>
 
     <main class="container mx-auto px-4 md:px-6 py-8 flex-grow">
-        
+
         <div class="mb-6">
-            <a href="compra-online.html" class="inline-flex items-center justify-center w-10 h-10 bg-[#69F0AE] text-white rounded-full shadow-md hover:scale-110 transition-transform">
+            <a href="compra-online.html"
+                class="inline-flex items-center justify-center w-10 h-10 bg-[#69F0AE] text-white rounded-full shadow-md hover:scale-110 transition-transform">
                 <i class="fa fa-undo"></i>
             </a>
         </div>
@@ -52,27 +55,37 @@
         <h2 class="text-3xl font-title text-[#1A3C44] text-center mb-8">Detalle del libro</h2>
 
         <div class="flex flex-col md:flex-row gap-8">
-            
+
             <aside class="w-full md:w-1/4 bg-white/50 p-6 rounded-3xl border border-[#B2EBF2]">
                 <h3 class="font-bold text-[#1A3C44] mb-4 border-b border-[#217E91] pb-2 text-lg">Categorías</h3>
                 <form class="grid grid-cols-2 md:grid-cols-1 gap-3 text-sm">
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Terror</label>
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Comedia</label>
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Fantasía</label>
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Misterio</label>
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Novela</label>
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Historia</label>
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Arte</label>
-                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox" class="accent-[#217E91]"> Autoayuda</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Terror</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Comedia</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Fantasía</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Misterio</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Novela</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Historia</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Arte</label>
+                    <label class="flex items-center gap-2 hover:text-[#217E91] cursor-pointer"><input type="checkbox"
+                            class="accent-[#217E91]"> Autoayuda</label>
                 </form>
             </aside>
 
             <section class="w-full md:w-3/4 bg-[#B2EBF2] p-6 md:p-10 rounded-[40px] shadow-lg">
-                
+
                 <div class="flex flex-col sm:flex-row items-center gap-8 mb-8 text-center sm:text-left">
-                    <img src="img/reconciliacion.png" alt="Reconciliación" class="w-48 h-72 object-cover rounded-xl shadow-2xl border-4 border-white">
+                    <img src="img/reconciliacion.png" alt="Reconciliación"
+                        class="w-48 h-72 object-cover rounded-xl shadow-2xl border-4 border-white">
                     <div>
-                        <h3 class="text-2xl md:text-4xl font-title text-[#1A3C44] mb-2">Juan Carlos I: Reconciliación</h3>
+                        <h3 class="text-2xl md:text-4xl font-title text-[#1A3C44] mb-2">Juan Carlos I: Reconciliación
+                        </h3>
                         <p class="text-[#217E91] font-bold text-lg">Biografías y Memorias</p>
                         <p class="text-[#E60000] text-3xl font-bold mt-4">23,65€</p>
                     </div>
@@ -85,31 +98,36 @@
                             <span class="text-[#217E91] font-bold">01.</span>
                             <div>
                                 <p class="font-bold">Naturaleza del libro</p>
-                                <p class="text-sm text-gray-600">Memorias escritas en primera persona, 512 páginas editadas por Planeta.</p>
+                                <p class="text-sm text-gray-600">Memorias escritas en primera persona, 512 páginas
+                                    editadas por Planeta.</p>
                             </div>
                         </li>
                         <li class="flex gap-3">
                             <span class="text-[#217E91] font-bold">02.</span>
                             <div>
                                 <p class="font-bold">Motivación</p>
-                                <p class="text-sm text-gray-600">Sentimiento de urgencia por recuperar su propia narrativa histórica.</p>
+                                <p class="text-sm text-gray-600">Sentimiento de urgencia por recuperar su propia
+                                    narrativa histórica.</p>
                             </div>
                         </li>
                         <li class="flex gap-3">
                             <span class="text-[#217E91] font-bold">03.</span>
                             <div>
                                 <p class="font-bold">Contenido</p>
-                                <p class="text-sm text-gray-600">Vida privada, anécdotas de la infancia y su papel crucial en la transición española.</p>
+                                <p class="text-sm text-gray-600">Vida privada, anécdotas de la infancia y su papel
+                                    crucial en la transición española.</p>
                             </div>
                         </li>
                     </ul>
                     <div class="mt-6 p-4 bg-white/40 border-l-4 border-[#217E91] italic text-sm">
-                        Este libro es fundamental para comprender la visión oficial del monarca sobre los hitos de la historia reciente de España.
+                        Este libro es fundamental para comprender la visión oficial del monarca sobre los hitos de la
+                        historia reciente de España.
                     </div>
                 </article>
 
                 <div class="flex justify-center md:justify-end">
-                    <a href="compra.html" class="bg-[#69F0AE] text-white text-xl px-12 py-4 rounded-2xl font-bold hover:scale-105 hover:bg-[#52d396] transition-all shadow-lg">
+                    <a href="compra.html"
+                        class="bg-[#69F0AE] text-white text-xl px-12 py-4 rounded-2xl font-bold hover:scale-105 hover:bg-[#52d396] transition-all shadow-lg">
                         <i class="fa fa-shopping-cart mr-2"></i> Comprar ahora
                     </a>
                 </div>
@@ -142,4 +160,5 @@
         };
     </script>
 </body>
+
 </html>
